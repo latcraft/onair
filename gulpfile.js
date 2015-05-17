@@ -89,13 +89,4 @@ gulp.task('stage', function () {
         .pipe(deploy());
 });
 
-gulp.task('live', function () {
-    var options = { 
-    	remoteUrl: "https://github.com/latcraft/latcraft.github.io.git",
-    	branch: "master"
-    };	
-    return gulp.src(['./www/**/*', './data/**/*', 'CNAME'])
-        .pipe(deploy(options));
-});
-
 gulp.task('default', ['connect', 'build', 'watch']);
