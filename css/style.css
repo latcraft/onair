@@ -280,6 +280,67 @@ img {
   border: 0;
   outline: none; }
 
+nav#nav {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  -webkit-transform: transitionY(-50%);
+      -ms-transform: transitionY(-50%);
+          transform: transitionY(-50%);
+  z-index: 100; }
+  nav#nav ul li {
+    margin: 0 0 8px 0;
+    position: relative;
+    width: 18px;
+    height: 18px; }
+    nav#nav ul li a {
+      width: 18px;
+      height: 18px;
+      display: block;
+      background: #bbb;
+      border-radius: 9px; }
+    nav#nav ul li .bubble {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      padding: 10px; }
+      nav#nav ul li .bubble:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        margin: 0 -12px 0 0;
+        border-left: 12px solid rgba(0, 0, 0, 0.7);
+        border-top: 16px solid transparent;
+        border-bottom: 16px solid transparent; }
+      nav#nav ul li .bubble h4 {
+        font-size: 18px;
+        color: #fff;
+        white-space: pre-line;
+        margin: 0 0 5px 0;
+        min-width: 190px; }
+      nav#nav ul li .bubble p {
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        color: #dedede;
+        margin: 0; }
+    nav#nav ul li:hover .bubble {
+      display: block; }
+    nav#nav ul li:last-child {
+      margin: 0; }
+    nav#nav ul li.active a {
+      background: #414141; }
+
 header#header {
   display: block;
   width: 100%;
@@ -353,8 +414,9 @@ section#blog {
       position: absolute;
       left: 50%;
       top: 50%;
-      -webkit-transform: translate3d(-50%, -50%, 0px);
-              transform: translate3d(-50%, -50%, 0px);
+      -webkit-transform: translateY(-50%) translateX(-50%);
+          -ms-transform: translateY(-50%) translateX(-50%);
+              transform: translateY(-50%) translateX(-50%);
       text-align: center; }
       section#blog .video-holder.wait .count > span {
         float: left;

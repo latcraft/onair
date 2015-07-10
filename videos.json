@@ -1,5 +1,15 @@
 [{
+	"show" : true,
+	"title" : "Title is still in bakery, but it smells good.",
+	"date" : "August 28, 2015",	
+	"description" : "It's not that we don't know what follows, but by telling you we would break a non-disclosure agreement on 1000+ pages. It just seems like a waste of paper. Do you want us to pollute? No? I didn't think so.",
+	"guests" : [{
+			"name": "Mistery Man",
+			"image": "/img/guests/mistery-man.jpeg"
+		}]
+}, {
 	"id" : "IlJ_sp5eZIw",
+	"show" : true,
 	"title" : "About operations.",
 	"date" : "May 15, 2015",	
 	"description" : "Let's talk to Yury Pavlyuchenkov about operations challenges, AWS goodness and system administration war stories.",
@@ -12,6 +22,7 @@
 		}]
 }, {
 	"id" : "eWgHD8VcDCg",
+	"show" : true,
 	"title" : "Pilot: Why choose Groovy?",
 	"date" : "April 24, 2015",	
 	"description" : "Let's talk to Andrey Adamovich about Groovy, current state of things and future. Is it worth to invest in learning Groovy? Is Groovy dead? Why Pivotal abandoned Groovy? Let's figure it out.",

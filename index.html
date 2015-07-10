@@ -11,6 +11,28 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <nav id="nav">
+      <ul>
+        <li class="active"><a href="#video0"></a>
+          <div class="bubble"> 
+            <h4>Title is still in bakery, but it smells good.</h4>
+            <p>August 28, 2015</p>
+          </div>
+        </li>
+        <li><a href="#video1"></a>
+          <div class="bubble"> 
+            <h4>About operations.</h4>
+            <p>May 15, 2015</p>
+          </div>
+        </li>
+        <li><a href="#video2"></a>
+          <div class="bubble"> 
+            <h4>Pilot: Why choose Groovy?</h4>
+            <p>April 24, 2015</p>
+          </div>
+        </li>
+      </ul>
+    </nav>
     <header id="header">
       <div class="container">
         <div id="logo"><a href="">LatCraft On Air</a></div>
@@ -21,29 +43,29 @@
     </header>
     <section id="blog">
       <div class="container">
-        <article class="post">
-          <div class="video-holder wait">
-            <div class="video">
-              <div class="count"><span>next episode airing after</span>
-                <div id="countdown" class="time"></div>
-              </div>
-            </div>
-          </div>
-          <div class="meta">
-            <h2>Title is still in bakery, but it smells good.</h2>
-            <time>April 24, 2015</time>
-            <p>It's not that we don't know what follows, but by telling you we would break a non-disclosure agreement on 1000+ pages. It just seems like a waste of paper. Do you want us to pollute? No? I didn't think so.</p>
-            <div class="guests">
-              <div class="guest"><img src="img/guests/mistery-man.jpeg" alt="Mistery Man">
-                <div class="details">
-                  <h4>Mistery Man</h4>
-                  <p>Not much is known about this man yet.</p>
-                </div>
-              </div>
-            </div><a href="#youtube" target="_blank" class="button">check youtube</a>
-          </div>
-        </article>
-                <article class="post">
+                <article id="video0" class="post">
+                  <div class="video-holder wait">
+                    <div class="video">
+                      <div class="count"><span>next episode airing after</span>
+                        <div date-time="August 28, 2015" class="countdown time"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="meta">
+                    <h2>Title is still in bakery, but it smells good.</h2>
+                    <time>August 28, 2015</time>
+                    <p>It's not that we don't know what follows, but by telling you we would break a non-disclosure agreement on 1000+ pages. It just seems like a waste of paper. Do you want us to pollute? No? I didn't think so.</p>
+                    <div class="guests">
+                      <div class="guest"><img src="/img/guests/mistery-man.jpeg" alt="Mistery Man">
+                        <div class="details">
+                          <h4>Mistery Man</h4>
+                          <p>Person you all know very well - man behind LatCraft.</p>
+                        </div>
+                      </div>
+                    </div><a href="https://www.youtube.com/watch?v=undefined" target="_blank" class="button">check youtube</a>
+                  </div>
+                </article>
+                <article id="video1" class="post">
                   <div class="video-holder">
                     <div class="video">
                       <iframe width="560" height="349" src="https://www.youtube.com/embed/IlJ_sp5eZIw" frameborder="0" allowfullscreen></iframe>
@@ -69,7 +91,7 @@
                     </div><a href="https://www.youtube.com/watch?v=IlJ_sp5eZIw" target="_blank" class="button">check youtube</a>
                   </div>
                 </article>
-                <article class="post">
+                <article id="video2" class="post">
                   <div class="video-holder">
                     <div class="video">
                       <iframe width="560" height="349" src="https://www.youtube.com/embed/eWgHD8VcDCg" frameborder="0" allowfullscreen></iframe>
@@ -102,8 +124,6 @@
         <div class="copyright">LatCraft &copy; 2015, All rights reserved.</div>
       </div>
     </footer>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB-7Vqco_p2pubCv8qbZU5tQjZ8bR3v20k"></script>
     <script src="js/main.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
