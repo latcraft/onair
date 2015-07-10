@@ -1,47 +1,37 @@
 section#blog
 	.container
-		article.post
-			.video-holder.wait
-				.video
-					.count
-						span next episode airing after
-						#countdown.time 6d 17h 14s
+		mixin video(item, index)
+			article.post(id="video#{index}")
+				if (item.date && !item.id) 
+					.video-holder.wait
+						.video
+							.count
+								span next episode airing after
+								.countdown(date-time="#{item.date}").time
+					
+				else
+					.video-holder
+						.video
+							iframe(width="560" height="349" src="https://www.youtube.com/embed/#{item.id}" frameborder="0" allowfullscreen)
 
-			.meta
-				h2 Title is still in bakery, but it smells good.
-				time April 24, 2015
-				p It's not that we don't know what follows, but by telling you we would break a non-disclosure agreement on 1000+ pages. It just seems like a waste of paper. Do you want us to pollute? No? I didn't think so.
-				.guests
-					.guest
-						img(src="img/guests/mistery-man.jpeg" alt="Mistery Man")
-						.details
-							h4 Mistery Man
-							p Not much is known about this man yet.
-				a(href="#youtube" target="_blank").button check youtube
+				.meta
+					h2 #{item.title}
+					time #{item.date}
+					p #{item.description}
+					
+					.guests
+						for guest in item.guests
+							.guest
+								img(src="#{guest.image}" alt="#{guest.name}")
+								.details
+									h4 #{guest.name}
+									p Person you all know very well - man behind LatCraft.
 
+					a(href="https://www.youtube.com/watch?v=#{item.id}", target="_blank").button check youtube
 
-		article.post
-			.video-holder
-				.video
-					iframe(width="560" height="349" src="https://www.youtube.com/embed/eWgHD8VcDCg" frameborder="0" allowfullscreen)
-
-			.meta
-				h2 Pilot: Why choose Groovy? 
-				time April 17, 2015
-				p Let's talk to Andrey Adamovich about Groovy, current state of things and future. Is it worth to invest in learning Groovy? Is Groovy dead? Why Pivotal abandoned Groovy? Let's figure it out.
-				
-				.guests
-					.guest
-						img(src="img/guests/eduards-sizovs.jpeg" alt="Eduards Sizovs")
-						.details
-							h4 Eduards Sizovs
-							p Person you all know very well - man behind LatCraft.
-					.guest
-						img(src="img/guests/andrey-adamovich.jpeg" alt="Andrey Adamovich")
-						.details
-							h4 Andrey Adamovich
-							p A real Groovy star amongs developers. He even has wrote a book. Check it out here.
-
-				a(href="https://www.youtube.com/watch?v=eWgHD8VcDCg").button check youtube
+		//- all this data is taken from /json folder (specifide in grunt file)
+		for video, index in videos
+			if (video.show)
+				+video(video, index)
 
 			

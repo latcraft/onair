@@ -1,4 +1,83 @@
 // --------------------------------------------
+// nav
+nav#nav {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: transitionY(-50%);
+    z-index: 100;
+
+    ul {
+        li {
+            margin: 0 0 8px 0;
+            position: relative;
+            width: 18px;
+            height: 18px;
+
+            a {
+                width: 18px;
+                height: 18px;
+                display: block;
+                background: #bbb;
+                border-radius: 9px;
+            }
+
+            .bubble {
+                position: absolute;
+                right: 40px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.7);
+                display: none;
+                padding: 10px;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 0px;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    margin: 0 -12px 0 0;
+                    border-left: 12px solid rgba(0, 0, 0, 0.7);
+                    border-top: 16px solid transparent;
+                    border-bottom: 16px solid transparent;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    color: #fff;
+                    white-space: pre-line;
+                    margin: 0 0 5px 0;
+                    min-width: 190px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-family: $primary-font;
+                    color: #dedede;
+                    margin: 0;
+                }
+            }
+
+            &:hover .bubble {
+                display: block;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &.active a {
+                background: #414141;
+            }
+        }
+    }
+}
+
+
+// --------------------------------------------
 // header
 header#header {
     display: block;    
@@ -105,7 +184,7 @@ section#blog {
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                transform: translate3d(-50%, -50%, 0px);
+                transform: translateY(-50%) translateX(-50%);
                 text-align: center;
 
                 & > span {

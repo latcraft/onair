@@ -48,9 +48,16 @@ gulp.task('sass', function () {
 
 // compiles jade
 gulp.task('jade', function() {
+	var videos = require('./data/videos.json');
+
  	gulp.src('./jade/*.jade')
  		.pipe(plumber())
-	    .pipe(jade({pretty: true}))
+	    .pipe(jade({
+	    	pretty: true,
+	    	locals: {
+	    		"videos": videos 	
+	    	}
+	    }))
 	    .pipe(gulp.dest(publicDir))
 	    .pipe(connect.reload());
 });
@@ -60,7 +67,7 @@ gulp.task('uglify', function() {
 	gulp.src(['js/**/jquery.js', 'js/**/*.js', 'js/*.js'])
 		.pipe(plumber())
 		.pipe(concat('main.js'))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest(publicDir + '/js'))
 		.pipe(connect.reload());
 });

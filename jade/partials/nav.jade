@@ -1,0 +1,9 @@
+nav#nav
+	ul
+		for video, index in videos
+			if (video.show)
+				li(class=(index == 0 ? "active": ""))
+					a(href="#video#{index}")
+					.bubble 
+						h4 #{video.title}
+						p #{video.date}
